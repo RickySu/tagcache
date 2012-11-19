@@ -1,8 +1,8 @@
 <?php
 
-namespace RickySu\Tagcache\Tests\Adapter;
+namespace RickySu\Tagcache\tests\Adapter;
 
-use RickySu\Tagcache\Tests\Adapter\BaseTagcacheAdapter;
+use RickySu\Tagcache\tests\Adapter\BaseTagcacheAdapter;
 use RickySu\Tagcache\Adapter\File;
 
 class FileTest extends BaseTagcacheAdapter

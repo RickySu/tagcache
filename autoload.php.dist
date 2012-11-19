@@ -1,4 +1,5 @@
 <?php
-$VendorPath=__DIR__.'/../../../../../vendor';
-include "$VendorPath/autoload.php";
-
+$VendorPath=__DIR__.'/vendor';
+$Loader=include "$VendorPath/autoload.php";
+$Loader->add('RickySu/Tagcache', __DIR__.'/src');
+$Loader->add('RickySu/Tagcache/tests', __DIR__.'/tests');

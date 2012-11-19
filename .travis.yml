@@ -3,8 +3,8 @@ php:
   - 5.3
   - 5.4
 before_script:
-  - ./Tests/travis/setup-apc.sh
-  - ./Tests/travis/setup-memcache.sh
-  - ./Tests/travis/setup-memcached.sh
+  - ./tests/travis/setup-apc.sh
+  - ./tests/travis/setup-memcache.sh
+  - ./tests/travis/setup-memcached.sh
   - phpenv rehash
 script: phpunit

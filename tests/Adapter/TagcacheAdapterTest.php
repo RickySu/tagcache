@@ -1,6 +1,6 @@
 <?php
 
-namespace RickySu\Tagcache\Tests\Adapter;
+namespace RickySu\Tagcache\tests\Adapter;
 
 use RickySu\Tagcache\Adapter\TagcacheAdapter;
 use RickySu\Tagcache\TagcacheObj;

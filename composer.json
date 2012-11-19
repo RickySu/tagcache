@@ -11,10 +11,10 @@
         }
     ],
     "require": {
-        "php": ">=5.3.2"
+        "php": ">=5.3.3"        
     },
     "autoload": {
-        "psr-0": { "RickySu\\Tagcache": "" }
+        "psr-0": { "RickySu\\Tagcache": "src" }
     },
     "target-dir": "RickySu/Tagcache"
 }
