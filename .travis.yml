@@ -1,10 +1,10 @@
 language: php
 php:
-  - 5.4
   - 5.3
+  - 5.4
 before_script:
-  - Tests/travis/setup-apc.sh
-  - Tests/travis/setup-memcache.sh
-  - Tests/travis/setup-memcached.sh
+  - ./Tests/travis/setup-apc.sh
+  - ./Tests/travis/setup-memcache.sh
+  - ./Tests/travis/setup-memcached.sh
   - phpenv rehash
 script: phpunit
