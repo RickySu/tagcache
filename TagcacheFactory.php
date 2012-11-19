@@ -2,8 +2,6 @@
 
 namespace RickySu\Tagcache;
 
-use RickySu\Tagcache\TagCahe\TagcacheAdapter;
-
 class TagcacheFactory
 {
     protected static $Instance = null;

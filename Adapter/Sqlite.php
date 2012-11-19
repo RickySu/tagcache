@@ -23,7 +23,7 @@ class Sqlite extends TagcacheAdapter
             $this->Sqlite = new PDO("sqlite:" . $this->DBFile);
 
             return;
-        }           
+        }
         @mkdir(dirname($this->DBFile), 0777, true);
         $this->Sqlite = new PDO("sqlite:" . $this->DBFile);
         $this->insertDBSQL();
@@ -34,7 +34,7 @@ class Sqlite extends TagcacheAdapter
         foreach (array('CacheData.sql', 'TagRelation.sql', 'Tag.sql') as $File) {
             $sql = file_get_contents(realpath(__DIR__ . DIRECTORY_SEPARATOR . 'sql' . DIRECTORY_SEPARATOR . $File));
             $this->Sqlite->exec($sql);
-        }        
+        }
     }
     public function getTagUpdateTimestamp($Tag)
     {

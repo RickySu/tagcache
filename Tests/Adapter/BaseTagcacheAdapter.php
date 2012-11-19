@@ -12,10 +12,10 @@ abstract class BaseTagcacheAdapter extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->cache_dir=__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'temp';
-        if(!is_dir($this->cache_dir)){
+        if (!is_dir($this->cache_dir)) {
             mkdir($this->cache_dir);
         }
-        $this->setupCache();        
+        $this->setupCache();
     }
 
     /**
@@ -145,11 +145,11 @@ abstract class BaseTagcacheAdapter extends \PHPUnit_Framework_TestCase
     }
 
     protected function tearDown()
-    {        
-        if(!$this->Cache){
+    {
+        if (!$this->Cache) {
             return;
         }
-        $this->Cache->clear();        
+        $this->Cache->clear();
         unset($this->Cache);
         $this->emptyCacheDir($this->cache_dir);
     }
@@ -157,15 +157,15 @@ abstract class BaseTagcacheAdapter extends \PHPUnit_Framework_TestCase
     protected function emptyCacheDir($dir)
     {
         $iterator=new \DirectoryIterator($dir);
-        foreach($iterator as $fileInfo){            
-            if($fileInfo->isDot()){
+        foreach ($iterator as $fileInfo) {
+            if ($fileInfo->isDot()) {
                 continue;
             }
-            $FullPath=realpath($dir.DIRECTORY_SEPARATOR.$fileInfo->getFilename());            
-            if($fileInfo->isFile() || $fileInfo->isLink()){                
+            $FullPath=realpath($dir.DIRECTORY_SEPARATOR.$fileInfo->getFilename());
+            if ($fileInfo->isFile() || $fileInfo->isLink()) {
                 unlink($FullPath);
-            }            
-            if($fileInfo->isDir()){                
+            }
+            if ($fileInfo->isDir()) {
                 $this->emptyCacheDir($FullPath);
                 rmdir($FullPath);
             }
