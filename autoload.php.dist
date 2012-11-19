@@ -1,6 +1,4 @@
 <?php
-$VendorPath=__DIR__.'/../../../vendor';
-
-set_include_path(get_include_path() . PATH_SEPARATOR . "$VendorPath/phing/phing/classes");
+$VendorPath=__DIR__.'/../../../../../vendor';
 include "$VendorPath/autoload.php";
 
