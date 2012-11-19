@@ -1,0 +1,20 @@
+{
+    "name": "rickysu/tagcache",    
+    "description": "Provide a cache storage engine and delete with tags",
+    "keywords": ["rickysu", "tag", "cache"],
+    "homepage": "https://github.com/RickySu/Tagcache",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ricky Su",
+            "email": "ricky@ez2.us"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",        
+    },
+    "autoload": {
+        "psr-0": { "RickySu\\Tagcache": "" }
+    },
+    "target-dir": "RickySu/Tagcache"
+}
