@@ -6,18 +6,17 @@ Tagcache
 Introduction
 ------------
 
-This bundle provides cache with tags.
+This is a cache storage engine.
 
 Features
 ------------
 
 * Stores a cache with multiple tags. And deletes cache by using tag.
-* Provides controller cache.
 
 Requirements
 ------------
 
-* Annotations for Controllers.
+* PHP 5.3 above
 
 Installation
 ------------
@@ -27,45 +26,13 @@ editing the composer.json file in the root project.
 ### Editing the composer.json under require: {} section add
 
 ```
-"rickysu/tagcache-bundle": "0.1.*",
+"rickysu/tagcache": "0.1.*",
 ```
-### Update Bundle :
+
+### Update Composer :
 
 ```
 php composer.phar update
-```
-
-### Instantiate Bundle :
-
-```php
-<?php
-//app/AppKernel.hpp
-public function registerBundles()
-{
-   $bundles = array(
-        // ...
-        new RickySu\Tagcache\Tagcache(),
-   );
-}
-```
-
-Configuration
--------------
-
-### Configure cache adapter
-
-```yml
-// app/config/config.yml
-tagcache:
-    driver:     Memcache
-    namespace:  'Name_Space_For_Your_Project'
-    options:
-        hashkey: true
-        enable_largeobject:    false
-        cache_dir:  'Temp_Cache_File_Store_Path'
-        servers:
-            -    'localhost:11211:10'
-            -    'otherhost:11211:20'
 ```
 
 #### driver
@@ -92,7 +59,21 @@ How to Use
 
 ```php
 <?php
-$Tagcache=$container->get('tagcache');
+use RickySu\Tagcache\TagcacheFactory;
+
+$Tagcache=TagcacheFactory::factory(array(
+    'driver'   => 'Memcache',
+    'namespace' => 'Name_Space_For_Your_Project',
+    'options'   => array(
+        'hashkey'  => true,
+        'enable_largeobject'  =>    false,
+        'cache_dir'  =>  'Temp_Cache_File_Store_Path',
+        'servers'    => array(
+            'localhost:11211:10',
+            'otherhost:11211:20',
+        ),
+    ),    
+));
 
 //store cache with Tags:{TagA,TagB} for 300 secs.
 $Tagcache->set('Key_For_Store','Data_For_Store',array('TagA','TagB'),300);
