@@ -3,6 +3,7 @@ php:
   - 5.3
   - 5.4
 before_script:
+  - composer require symfony/class-loader=2.1.*
   - ./tests/travis/setup-apc.sh
   - ./tests/travis/setup-memcache.sh
   - ./tests/travis/setup-memcached.sh
