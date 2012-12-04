@@ -1,7 +1,7 @@
 Tagcache
 ==============
 
-[![Build Status](https://api.travis-ci.org/RickySu/Tagcache.png)](https://api.travis-ci.org/RickySu/Tagcache.png])
+[![Build Status](https://api.travis-ci.org/RickySu/tagcache.png)](https://api.travis-ci.org/RickySu/tagcache.png])
 
 Introduction
 ------------
