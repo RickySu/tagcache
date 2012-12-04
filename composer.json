@@ -2,7 +2,7 @@
     "name": "rickysu/tagcache",    
     "description": "Provide a cache storage engine and delete with tags",
     "keywords": ["rickysu", "tag", "cache"],
-    "homepage": "https://github.com/RickySu/Tagcache",
+    "homepage": "https://github.com/RickySu/tagcache",
     "license": "MIT",
     "authors": [
         {
