@@ -4,8 +4,21 @@ php:
   - 5.4
 before_script:
   - composer require symfony/class-loader=2.1.*
-  - ./tests/travis/setup-apc.sh
-  - ./tests/travis/setup-memcache.sh
-  - ./tests/travis/setup-memcached.sh
+  - echo "" | pecl install apc-beta
+  - echo "extension=apc.so" >> `php --ini |grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+  - echo "apc.enabled=1" >> `php --ini |grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+  - echo "apc.enable_cli=1" >> `php --ini |grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+  - sudo ldconfig -v
+  - echo 'y' | pecl install memcache
+  - echo "extension=memcache.so" >> `php --ini |grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+  - sudo ldconfig -v
+  - sudo apt-get remove --purge -y libmemcached-dev libmemcached
+  - sudo apt-get install libcloog-ppl0
+  - wget -c 'http://launchpad.net/libmemcached/1.0/1.0.14/+download/libmemcached-1.0.14.tar.gz'
+  - tar -xvf libmemcached-1.0.14.tar.gz
+  - sh -c "cd libmemcached-1.0.14 && sudo ./configure --disable-sasl && sudo make all && sudo make install && sudo ldconfig"
+  - echo 'y' | pecl install memcached
+  - echo "extension=memcached.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+  - sudo ldconfig -v
   - phpenv rehash
 script: phpunit
