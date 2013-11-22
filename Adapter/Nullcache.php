@@ -55,4 +55,19 @@ class Nullcache extends TagcacheAdapter
         return true;
     }
 
+    protected function deleteRaw($key)
+    {
+        return true;
+    }
+
+    protected function getRaw($key)
+    {
+        return null;
+    }
+
+    protected function setRaw($key, $Obj, $expire)
+    {
+        return true;
+    }
+
 }
