@@ -93,7 +93,7 @@ abstract class TagcacheAdapter
             array_push($Tags, self::TAG_CLEAR_ALL);
             foreach ($Tags as $Tag) {
                 if ($this->getTagUpdateTimestamp($Tag) === false) {
-                    $this->setRaw($this->buildKey(self::TAG_PREFIX . $Tag), TagcacheTime::time());
+                    $this->setRaw($this->buildKey(self::TAG_PREFIX . $Tag), TagcacheTime::time(), 0);
                 }
             }
         }

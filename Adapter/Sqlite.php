@@ -147,7 +147,7 @@ class Sqlite extends TagcacheAdapter
     {
     }
 
-    public function setRaw($key, $Obj, $expire)
+    public function setRaw($key, $Obj, $expire = 0)
     {
     }
 
