@@ -16,7 +16,7 @@ abstract class TagcacheAdapter
     protected $debug = false;
     protected $hLock = array();
 
-    public function __construct($NameSpace, $Options, $debug)
+    public function __construct($NameSpace, $Options, $debug = false)
     {
         $this->Namespace = $NameSpace;
         $this->Options = $Options;

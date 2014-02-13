@@ -8,7 +8,7 @@ class Apc extends TagcacheAdapter
 {
     const APC_OBJ_MAXSIZE = 1024000;
 
-    public function __construct($NameSpace, $Options, $debug)
+    public function __construct($NameSpace, $Options, $debug = false)
     {
         parent::__construct($NameSpace, $Options, $debug);
     }

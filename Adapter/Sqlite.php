@@ -10,7 +10,7 @@ class Sqlite extends TagcacheAdapter
 {
     protected $Sqlite, $DBFile;
 
-    public function __construct($NameSpace, $Options, $debug)
+    public function __construct($NameSpace, $Options, $debug = false)
     {
         parent::__construct($NameSpace, $Options, $debug);
         $this->InitDBFile();
