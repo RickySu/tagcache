@@ -13,7 +13,7 @@ class TagcacheFactory
     public static function factory($Config)
     {
         $Driver='RickySu\\Tagcache\\Adapter\\'.$Config['driver'];
-        self::$Instance=new $Driver($Config['namespace'],$Config['options']);
+        self::$Instance=new $Driver($Config['namespace'],$Config['options'], $Config['debug']);
 
         return self::$Instance;
     }
