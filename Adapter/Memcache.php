@@ -95,7 +95,7 @@ class Memcache extends TagcacheAdapter
 
     protected function deleteRaw($key)
     {
-        return $this->Memcache->delete($key, 0);
+        return @$this->Memcache->delete($key, 0);
     }
 
     public function inc($key, $expire = 0)
