@@ -14,7 +14,9 @@ class Redis extends TagcacheAdapter
     {
         parent::__construct($namespace, $options);
 
-        $this->redis = new \Redis();
+        $class = isset($this->Options['redis_connection_class']) ? $this->Options['redis_connection_class'] : \Redis::class;
+
+        $this->redis = new $class();
 
         if (empty($options['servers'][0])) {
             throw new \Exception('Redis TagcacheAdapter not configured properly.');
