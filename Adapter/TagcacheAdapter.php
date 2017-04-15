@@ -13,16 +13,19 @@ abstract class TagcacheAdapter
 
     protected $Namespace = null;
     protected $Options = null;
+    protected $debug = false;
     protected $hLock = array();
 
-    public function __construct($NameSpace, $Options)
+    public function __construct($NameSpace, $Options, $debug = false)
     {
         $this->Namespace = $NameSpace;
         $this->Options = $Options;
+        $this->debug = $debug;
     }
 
     protected function buildKey($Key)
     {
+        $Key = $Key.($this->debug ? "dev" : "prod");
         if ($this->Options['hashkey']) {
             return md5("{$this->Namespace}:$Key");
         }

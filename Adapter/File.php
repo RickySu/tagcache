@@ -8,9 +8,9 @@ class File extends TagcacheAdapter
 {
     protected $CacheBaseDir;
 
-    public function __construct($NameSpace, $Options)
+    public function __construct($NameSpace, $Options, $debug = false)
     {
-        parent::__construct($NameSpace, $Options);
+        parent::__construct($NameSpace, $Options, $debug);
         $this->CacheBaseDir = $Options['cache_dir'];
     }
 

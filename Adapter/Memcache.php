@@ -10,9 +10,9 @@ class Memcache extends TagcacheAdapter
 
     const MEMCACHE_OBJ_MAXSIZE = 1024000;
 
-    public function __construct($NameSpace, $Options)
+    public function __construct($NameSpace, $Options, $debug = false)
     {
-        parent::__construct($NameSpace, $Options);
+        parent::__construct($NameSpace, $Options, $debug);
         $this->Memcache = new \Memcache();
         foreach ($Options['servers'] as $Server) {
             list($Host, $Port, $Weight) = explode(":", $Server);

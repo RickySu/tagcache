@@ -6,9 +6,9 @@ use RickySu\Tagcache\Adapter\TagcacheAdapter;
 
 class Nullcache extends TagcacheAdapter
 {
-    public function __construct($NameSpace, $Options)
+    public function __construct($NameSpace, $Options, $debug = false)
     {
-        parent::__construct($NameSpace, $Options);
+        parent::__construct($NameSpace, $Options, $debug);
     }
 
     public function getTagUpdateTimestamp($Tag)
