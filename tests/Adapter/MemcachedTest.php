@@ -7,6 +7,16 @@ use RickySu\Tagcache\Adapter\Memcached;
 
 class MemcachedTest extends BaseTagcacheAdapter
 {
+    protected function setUp()
+    {
+        if (!extension_loaded('memcached')) {
+            $this->markTestSkipped(
+                'The memcached extension is not available.'
+            );
+        }
+        parent::setUp();
+    }
+
     protected function setupCache($EnableLargeObject=false)
     {
         $this->Cache = new Memcached(md5(microtime() . rand()), array(

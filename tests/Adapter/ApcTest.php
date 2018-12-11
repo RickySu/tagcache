@@ -7,6 +7,17 @@ use RickySu\Tagcache\Adapter\Apc;
 
 class ApcTest extends BaseTagcacheAdapter
 {
+    protected function setUp()
+    {
+        if (!extension_loaded('apc')) {
+            $this->markTestSkipped(
+                'The APC extension is not available.'
+            );
+        }
+
+        parent::setUp();
+    }
+
     protected function setupCache($EnableLargeObject=false)
     {
         $this->Cache = new Apc(md5(microtime() . rand()), array(
